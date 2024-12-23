@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유윤미 ❤️ 함재율, 우리만의 이야기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7ff; /* 하늘색 배경 */
+        }
+        header {
+            background-color: #0288d1;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        nav {
+            background-color: #03a9f4;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .timer {
+            text-align: center;
+            font-size: 18px;
+            margin: 20px 0;
+            color: #0288d1;
+        }
+        footer {
+            background-color: #0288d1;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        .promise {
+            background-color: #fce4ec;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .promise h3 {
+            color: #e91e63;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        유윤미 ❤️ 함재율, 우리만의 이야기
+    </header>
+    <nav>
+        <a href="#about">소개</a>
+        <a href="#gallery">갤러리</a>
+        <a href="#promise">우리의 약속</a>
+        <a href="#contact">연락처</a>
+    </nav>
+    <section id="about" class="content">
+        <h2>우리의 사랑 이야기</h2>
+        <p>2024년 2월 12일부터 우리의 사랑 이야기가 시작되었습니다.</p>
+        <h3>함께한 추억</h3>
+        <ul>
+            <li>첫 데이트: 2024년 2월 14일</li>
+            <li>첫 여행: 2024년 9월 제주도</li>
+            <li>기념일: 매년 2월 12일</li>
+        </ul>
+        <div class="timer" id="timer">
+            중요한 날까지 남은 시간: 계산 중...
+        </div>
+    </section>
+    <section id="gallery" class="gallery">
+        <h2 style="width: 100%; text-align: center;">우리의 추억 갤러리</h2>
+        <img src="yul11.jpg" alt="우리의 첫 데이트">
+        <img src="KakaoTalk_20241223_225010595_01.jpg" alt="사랑스러운 셀카">
+        <img src="KakaoTalk_20241223_225010595_03.jpg" alt="꽃 선물과 함께">
+    </section>
+    <section id="promise" class="promise">
+        <h3>우리의 약속</h3>
+        <p>우리는 서로를 항상 존중하고 사랑할 것을 약속합니다.</p>
+        <p>함께한 모든 순간을 소중히 여기며, 매일 더 나은 사람이 될 것을 다짐합니다.</p>
+    </section>
+    <footer>
+        &copy; 2024 우리의 사랑 페이지. 모든 권리 보유.
+    </footer>
+
+    <script>
+        // 만난 지 1,000일 타이머 계산
+        const startDate = new Date("2024-02-12");
+        const targetDate = new Date(startDate.getTime() + 1000 * 24 * 60 * 60 * 1000); // 1000일 후
+        const timerElement = document.getElementById("timer");
+
+        function updateTimer() {
+            const now = new Date();
+            const diff = targetDate - now;
+
+            if (diff <= 0) {
+                timerElement.textContent = "1,000일이 되었습니다! 축하합니다! 🎉";
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            timerElement.textContent = `중요한 날까지 남은 시간: ${days}일 ${hours}시간 ${minutes}분 ${seconds}초`;
+        }
+
+        setInterval(updateTimer, 1000);
+    </script>
+</body>
+</html>
